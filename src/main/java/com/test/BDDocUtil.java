@@ -172,13 +172,7 @@ private static Configuration freemarkerConfig;
 			
 			result.put("title", "数据库文档");
 			result.put("tableList", tableList);
-			
-			
-				BDDocUtil.class.getResource(File.separator+dbTemplateFileName);
-			
-			
-			
-			
+
 			freemarkerConfig.setTemplateLoader(new URLTemplateLoader() {
 				
 				@Override
