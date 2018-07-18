@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: DBDocUtil
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: winfo39
+Implementation-Vendor-Id: com.test
+Build-Jdk: 1.8.0_152
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/DBDocUtil
+Created-By: Maven Integration for Eclipse
+

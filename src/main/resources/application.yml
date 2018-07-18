@@ -1,0 +1,17 @@
+server:
+  port: 8080
+  session-timeout: 30  
+  tomcat.max-threads: 0  
+  tomcat.uri-encoding: UTF-8 
+
+
+spring:
+    http:
+        encoding:
+        force: true
+        charset: UTF-8
+        enabled: true   
+    #thymeleaf模板引擎，后缀为html
+    thymeleaf:
+        mode: HTML5  
+        encoding: utf-8  

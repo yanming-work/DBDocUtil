@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>自动生成数据库文档</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script type="text/javascript" th:src="@{/js/jquery-1.8.2.js}"></script>
+    <script th:inline="javascript" type="text/javascript">
+        $(function (){
+        		$("#dbType").val("oracle");
+        		$("#driverName").val("oracle.jdbc.driver.OracleDriver");
+				$("#port").val("1521");
+				
+				
+               $("#dbType").change(function(){
+				  if($("#dbType").val()=="mysql"){
+				  	$("#driverName").val("com.mysql.jdbc.Driver");
+				   	$("#port").val("3306");
+				  }else if($("#dbType").val()=="oracle"){
+				  	$("#driverName").val("oracle.jdbc.driver.OracleDriver");
+				   	$("#port").val("1521");
+				  }
+				  
+				}); 
+                          
+        });
+    </script>
+</head>
+<body>
+<h1>自动生成数据库文档!
+</h1>
+    <form action="/doc/init" method="post">
+ 
+    数据库类型：<select name="dbType" id="dbType">
+  		<option value ="oracle">oracle</option>
+  		<option value ="mysql">mysql</option>
+	</select>
+	<br/> <br/> 
+	数据库驱动：<select name="driverName" id="driverName">
+  		<option value ="oracle.jdbc.driver.OracleDriver">oracle.jdbc.driver.OracleDriver</option>
+  		<option value ="com.mysql.jdbc.Driver">com.mysql.jdbc.Driver</option>
+	</select>
+	<br/> <br/> 
+     
+     数据库IP: <input type="text" name="ip" width="128" /><br/>  <br/> 
+     数据库端口: <input type="text" name="port" id="port" width="128" /><br/>  <br/> 
+     数据库名/实例名：<input type="text" name="dbName"/><br/>  <br/> 
+     数据库用户名：<input type="text" name="user"/><br/> <br/> 
+     数据库密码： <input type="text" name="password"/><br/> <br/>      
+     数据库保存路径： <input type="text" name="docFilePath"  value="D://数据库文档.doc" /><br/> <br/> 
+     数据库模板文件：<input type="text" name="dbTemplateFileName" value="DBTemplate.xml" readonly="readonly"/><br/><br/>  
+      
+        
+     <input type="submit" value="生成数据库文档"/>
+    </form>
+</body>
+</html>
